@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HNGTASK1</title>
+    <link rel="stylesheet" href="/index.css"/>
+</head>
+<body>
+    <div class="container">
+        <section >
+            <h1 data-testid="slackUserName">CHUKWUKA NONYELIM</h1>
+        </section>
+        <section>
+            <img class="imgs" src="IMG_3624.JPG" data-testid="slackDisplayImage" alt="ChukwukaNonyelim">
+        </section>
+        <section >
+            <h3 id="day" data-testid="currentDayOfTheWeek"> </h3>
+        </section>
+        <section >
+             <h3 id="timer" data-testid="currentUTCTime"></h3>
+        </section>
+        <section>
+             <h3 data-testid="myTrack">FRONTEND TRACK</h3> 
+        </section>
+        <section>
+             <a data-testid="githubURL" href="" target="_blank">URL</a>
+        </section>
+    </div>
+    <script>
+        function updateDayInWord() {
+            const dayWordsElement = document.getElementById("day");
+            const currentDate = new Date();
+            const options = { weekday: 'long' };
+            const dayInWords = currentDate.toLocaleDateString('en-US', options);
+            dayWordsElement.textContent = dayInWords;
+        }
+
+        function updateUTCTimeInMilliseconds() {
+            const utcTimeMSElement = document.getElementById("timer");
+            const currentUTCTimeMS = new Date().getTime();
+            utcTimeMSElement.textContent = currentUTCTimeMS;
+        }
+
+        updateDayInWord();
+        updateUTCTimeInMilliseconds();
+        setInterval(updateDayInWord, 1000);
+        setInterval(updateUTCTimeInMilliseconds, 1000);
+    </script>
+</body>
+</html>

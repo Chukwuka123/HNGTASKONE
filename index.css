@@ -1,0 +1,13 @@
+.imgs{
+   overflow: hidden;
+   max-width: 30%;
+   height: auto;
+}
+    
+.container{
+   margin:auto;
+   width:60%;
+   background-color:burlywood;
+   position: absolute;
+}
+
